@@ -17,11 +17,10 @@ library(OneTwoSamples)
 
 ## Questão 01
 
-~~~TeX
+
 \begin{equation}
 	\text{S} = \sum{p=1}^N \text{E}(p) 
 \end{equation}
-~~~
 
 
 ~~~r
