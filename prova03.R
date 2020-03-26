@@ -145,7 +145,7 @@ c('t tabelado (tt)' = tt, 't calculado (tc)' = tc)
 
 # Utilizando a funcao 
 
-var.test(x4,y4,conf.level = 0.9)[3] > alpha
+var.test(x4,y4)[3] > alpha
 # p-value = 0.3360 // alpha = 0.1
 # p-value maior que alpha, entao nao rejeitamos H0
 
@@ -169,7 +169,7 @@ tt[1] < tc &  tc < tt[2]
 
 # utilizanto a função t.test
 
-t.test(x4,y4,conf.level = 0.9)[3] < alpha
+t.test(x4,y4)[3] < alpha
 # p-value = 0.0003727682 // alpha = 0.1
 # p-value menor que alpha, entao rejeitamos H0
 
