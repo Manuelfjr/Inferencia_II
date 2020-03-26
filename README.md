@@ -18,8 +18,9 @@ library(OneTwoSamples)
 ## Questão 01
 
 ~~~TeX
-\[ \text{S}1(N) = \sum{p=1}^N \text{E}(p) \]
-
+\begin{equation}
+	\text{S} = \sum{p=1}^N \text{E}(p) 
+\end{equation}
 ~~~
 
 
