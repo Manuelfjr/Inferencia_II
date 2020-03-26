@@ -1,6 +1,4 @@
 # Inferencia II
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-mathjax: true
 
 Prova 03
 
@@ -14,11 +12,6 @@ library(OneTwoSamples)
 ~~~
 
 ## Questão 01
-
-$$
-H_{0} : \mu \le 42
-H_{1} : \mu >  42
-$$
 
 ~~~r
 
