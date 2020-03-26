@@ -173,8 +173,9 @@ t.test(x4,y4)[3] < alpha
 # p-value = 0.0003727682 // alpha = 0.1
 # p-value menor que alpha, entao rejeitamos H0
 
-# Verificamos que , a um nivel de confiança  de 1%, rejeitamos a de que a diferença
-# entre as medias dos tipos de investimento e igual de 0 .
+# Verificamos que , a um nivel de confiança  de 1%, 
+# rejeitamos a de que a diferença entre as medias 
+# dos tipos de investimento e igual de 0 .
 
 
 # Questao 05 --------------------------------------------------------------
@@ -205,8 +206,9 @@ t.test(x5, mu= 5, alternative ='less')[3] > alpha
 # p-value = 0.1687318 // alpha = 0.05
 # sendo o p-valor superior ao meu alpha,  nao rejeitamos H0
 
-# Verifica-se que , a um nivel de confianca de 95 %,  nao ha motivos para rejeitar
-# a hipotese de que a proporcao de pacientes para os quais o tempo de recao apos a 
+# Verifica-se que , a um nivel de confianca de 95 %,  nao
+# ha motivos para rejeitar a hipotese de que a proporcao de
+# pacientes para os quais o tempo de recao apos a 
 # utilizacao desse medicamento maior que 5 minutos .
 
 # Questao 06 --------------------------------------------------------------
@@ -239,8 +241,9 @@ prop.test(x = num_positive, num_total, alternative ="greater")[3] < alpha
 # p-value =  0.02806352  //  alpha = 0.05
 # p-value  menor que alpha, entao rejeitamos H0
 
-# Verifica-se que , a um nivel de confianca de 5%, rejeitamos a hipotese de que 
-# a proporcao de europeus que estao mais otimistas quanto ao panorama economico
-# futuro e menor que a proporcao de  americanos que responderam afirmativamente,
-# entao, podemos afirmar que  os europeus estao mais otimistas quanto ao panorama
+# Verifica-se que , a um nivel de confianca de 5%, rejeitamos a 
+# hipotese de que a proporcao de europeus que estao mais otimistas
+# quanto ao panorama economico futuro e menor que a proporcao de 
+# americanos que responderam afirmativamente, entao, podemos 
+# afirmar que  os europeus estao mais otimistas quanto ao panorama
 # economico futuro

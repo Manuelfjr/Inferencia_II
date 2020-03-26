@@ -15,10 +15,10 @@ library(OneTwoSamples)
 
 ~~~r
 
-pop1 <- c(40.1, 45.0, 39.1, 43.9, 45.8, 44.2, 37.4, 44.7, 45.2,
-       41.2, 40.7, 43.1, 44.1, 42.6, 40.6, 41.8, 42.9, 45.8,
-       43.4, 45.5, 44.8, 42.3, 40.4, 41.9, 42.1, 44.4, 43.7,
-       43.9, 42.6, 45.5, 41.5, 45.2, 43.6, 42.8, 43.3, 45.7)
+pop1 <- c(40.1, 45.0, 39.1, 43.9, 45.8, 44.2, 37.4, 44.7,
+45.2,41.2, 40.7, 43.1, 44.1, 42.6, 40.6, 41.8, 42.9, 45.8,
+43.4, 45.5, 44.8, 42.3, 40.4, 41.9, 42.1, 44.4, 43.7,
+43.9, 42.6, 45.5, 41.5, 45.2, 43.6, 42.8, 43.3, 45.7)
 
 pop1 <- as.matrix(pop1)
 
@@ -33,8 +33,10 @@ alpha <- 0.05
 sigma <- sqrt(var(pop1))
 xbarra <- mean(x1)
 
-# Como temos a media populacional, e desvio padrao populacional, usaremos o teste
-# para média e desvio padrao populacionais conhecidos, tal que :
+# Como temos a media populacional, e desvio
+# padrao populacional, usaremos o teste 
+# para média e desvio padrao populacionais
+# conhecidos, tal que :
 
 zc <- (xbarra - mu)/(sigma/sqrt(n)) # Perceba que zc > 0
 zt <- qnorm(1-alpha)
@@ -48,7 +50,8 @@ t.test(x1, mu=mu, alternative = "greater")[3] > alpha
 # alpha = 0.05 // p-valor = 0.09
 # p-value maior que alpha, entao nao rejeitamos H0
 
-# Logo, não rejeitamos a hipotese de que a media populacional é inferior a 42 .
+# Logo, não rejeitamos a hipotese de que a media 
+# populacional é inferior a 42 .
 
 ~~~
 
@@ -56,8 +59,8 @@ t.test(x1, mu=mu, alternative = "greater")[3] > alpha
 
 ~~~r
 
-pop2 <- c(1200, 1100, 900, 1250, 1300, 1290,  1100, 1060, 1180, 1120, 1160,
-          1140, 1190, 1110, 1100, 1220)
+pop2 <- c(1200, 1100, 900, 1250, 1300, 1290,  1100, 
+1060, 1180, 1120, 1160,1140, 1190, 1110, 1100, 1220)
 
 pop2 <- as.matrix(pop2)
 sd(pop2)
@@ -73,7 +76,8 @@ alpha <- 0.1
 qc <-((n2 - 1)*var(x2))/sigma2 
 qt <- qchisq(alpha,n2-1)
 
-c('q tabelado (qt)' = qt, 'q calculado (qc)' = qc) # qt = 0.0158 // qc = 0.00000018
+c('q tabelado (qt)' = qt, 'q calculado (qc)' = qc) 
+# qt = 0.0158 // qc = 0.00000018
 
 qt > qc # Regiao inferior da curva
 
@@ -82,10 +86,11 @@ sigma.test(x2,sigmasq=sigma2,conf.level = 0.90)[3] < alpha
 # p-value = 0.000677 // alpha = 0.1
 # p-value menor que alpha, entao rejeitamos H0 
 
-# Verifica-se que , rejeitamos a hipotese de que a variancia populacional
-# é superior a (100.000 horas)^2, ou seja, rejeitamos a hipotese de que 
-# o desvio padrão do tempo de vida das lampadas é superior ou igual a 100.000
-# horas, a um nivel de confianca de 90 % .
+# Verifica-se que , rejeitamos a hipotese de que a
+# variancia populacional é superior a (100.000 horas)^2, 
+# ou seja, rejeitamos a hipotese de que o desvio padrão 
+# do tempo de vida das lampadas é superior ou igual a 
+# 100.000 horas, a um nivel de confianca de 90 % .
 ~~~
 ## Questão 03
 ~~~r
@@ -111,10 +116,12 @@ ybarra32 <- mean(y3)
 
 sp <- sqrt( ((n3 - 1)*var(x3) + (n3 - 1)*var(y3))/(n3 + n3 - 2) )
 
-tc <- (xbarra31 - ybarra32)/(sp*sqrt((1/n3) + (1/n3))) # tc < 0
+tc <- (xbarra31 - ybarra32)/(sp*sqrt((1/n3) + (1/n3))) 
+# tc < 0
 tt <- qt(alpha,df = n3 + n3 - 2)
 
-c('t tabelado (tt)' = tt, 't calculado (tc)' = tc) # tt = -2.6245 // tc = -0.0711
+c('t tabelado (tt)' = tt, 't calculado (tc)' = tc) 
+# tt = -2.6245 // tc = -0.0711
 
 tt < tc
 
@@ -164,15 +171,16 @@ var.test(x4,y4)[3] > alpha
 # p-value = 0.3360 // alpha = 0.1
 # p-value maior que alpha, entao nao rejeitamos H0
 
-# Verifica-se que , a um nivel de significancia de 1%, temos que 
-# nao rejeitamos a hipotese de que as variancias dos tipos de 
-# investimentos sao diferntes .
+# Verifica-se que , a um nivel de significancia de 
+# 1%, temos que nao rejeitamos a hipotese de que 
+# as variancias dos tipos de investimentos sao 
+# diferntes .
 
 # B)
 
 alpha <- 0.1
 
-sp <- sqrt(((n4 - 1)*(s41)**(2) + (n4 - 1)*(s42)**(2))/(n4 + n4 - 2))
+sp <- sqrt(((n4-1)*(s41)**(2) + (n4 - 1)*(s42)**(2))/(n4 + n4 - 2))
 
 tc <- (xbarra4 - ybarra4)/(sp*sqrt((1/n4) + (1/n4))) # Note que tc < 0
 tt <- c(qt((alpha/2), df= n1 + n2 - 2),qt(1 -(alpha/2), df= n1 + n2 - 2))
@@ -188,8 +196,9 @@ t.test(x4,y4)[3] < alpha
 # p-value = 0.0003727682 // alpha = 0.1
 # p-value menor que alpha, entao rejeitamos H0
 
-# Verificamos que , a um nivel de confiança  de 1%, rejeitamos a de que a diferença
-# entre as medias dos tipos de investimento e igual de 0 .
+# Verificamos que , a um nivel de confiança  de 1%, 
+# rejeitamos a de que a diferença entre as medias dos
+# tipos de investimento e igual de 0 .
 
 ~~~
 
@@ -197,8 +206,9 @@ t.test(x4,y4)[3] < alpha
 
 ~~~r
 
-pop5 <- c(4.0,3.5,6.1,5.8,5.4,4.4,4.9,3.9,5.1,5.3,4.1,4.2,4.8,4.7,3.8,4.8,5.3,
-          5.5,3.6,3.5,4.7,3.3,3.7,6.3,5.7,3.9,4.6,4.7,4.1,4.3)
+pop5 <- c(4.0,3.5,6.1,5.8,5.4,4.4,4.9,3.9,5.1,5.3,4.
+1,4.2,4.8,4.7,3.8,4.8,5.3,5.5,3.6,3.5,4.7,3.3,
+3.7,6.3,5.7,3.9,4.6,4.7,4.1,4.3)
 
 pop5 <- as.matrix(pop5)
 
@@ -223,8 +233,9 @@ t.test(x5, mu= 5, alternative ='less')[3] > alpha
 # p-value = 0.1687318 // alpha = 0.05
 # sendo o p-valor superior ao meu alpha,  nao rejeitamos H0
 
-# Verifica-se que , a um nivel de confianca de 95 %,  nao ha motivos para rejeitar
-# a hipotese de que a proporcao de pacientes para os quais o tempo de recao apos a 
+# Verifica-se que , a um nivel de confianca de 95 %,  nao 
+# ha motivos para rejeitar a hipotese de que a proporcao
+# de pacientes para os quais o tempo de recao apos a 
 # utilizacao desse medicamento maior que 5 minutos .
 ~~~
 
@@ -260,10 +271,13 @@ prop.test(x = num_positive, num_total, alternative ="greater")[3] < alpha
 # p-value =  0.02806352  //  alpha = 0.05
 # p-value  menor que alpha, entao rejeitamos H0
 
-# Verifica-se que , a um nivel de confianca de 5%, rejeitamos a hipotese de que 
-# a proporcao de europeus que estao mais otimistas quanto ao panorama economico
-# futuro e menor que a proporcao de  americanos que responderam afirmativamente,
-# entao, podemos afirmar que  os europeus estao mais otimistas quanto ao panorama
+# Verifica-se que , a um nivel de confianca de 5%, 
+# rejeitamos a hipotese de que a proporcao de 
+# europeus que estao mais otimistas quanto ao
+# panorama economico futuro e menor que a 
+# proporcao de  americanos que responderam
+# afirmativamente, entao, podemos afirmar que  
+# os europeus estao mais otimistas quanto ao panorama
 # economico futuro
 ~~~
 
