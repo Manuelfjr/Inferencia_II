@@ -10,8 +10,11 @@ Disciplina : Inferencia II
 library(TeachingDemos) 
 library(OneTwoSamples)
 ~~~
-\pagebreak
+
 ## Questão 01
+
+\[H_{0} : \mu \le 42\]
+\[H_{1} : \mu >  42\]
 ~~~r
 
 pop1 <- c(40.1, 45.0, 39.1, 43.9, 45.8, 44.2, 37.4, 44.7, 45.2,
@@ -50,7 +53,7 @@ t.test(x1, mu=mu, alternative = "greater")[3] > alpha
 # Logo, não rejeitamos a hipotese de que a media populacional é inferior a 42 .
 
 ~~~
-\pagebreak
+
 ## Questão 02
 
 ~~~r
@@ -86,9 +89,7 @@ sigma.test(x2,sigmasq=sigma2,conf.level = 0.90)[3] < alpha
 # o desvio padrão do tempo de vida das lampadas é superior ou igual a 100.000
 # horas, a um nivel de confianca de 90 % .
 ~~~
-\pagebreak
 ## Questão 03
-
 ~~~r
 
 pop31 <- c(2.19, 2.39, 2, 7.99, 1.98, 4.99, 1.79, 1.69, 2.19, 1.99)
@@ -128,7 +129,7 @@ t.test(x3,y3, alternative = "greater", conf.level = 0.99)[3] > alpha
 # no Whole Foods, a um nivel de confiança de 99%
 
 ~~~
-\pagebreak
+
 ## Questão 04
 
 ~~~r
@@ -193,7 +194,7 @@ t.test(x4,y4)[3] < alpha
 # entre as medias dos tipos de investimento e igual de 0 .
 
 ~~~
-\pagebreak
+
 ## Questão 05
 
 ~~~r
@@ -228,7 +229,7 @@ t.test(x5, mu= 5, alternative ='less')[3] > alpha
 # a hipotese de que a proporcao de pacientes para os quais o tempo de recao apos a 
 # utilizacao desse medicamento maior que 5 minutos .
 ~~~
-\pagebreak
+
 ## Questão 06
 
 ~~~r
