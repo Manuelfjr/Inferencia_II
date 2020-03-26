@@ -15,7 +15,7 @@ library(OneTwoSamples)
 
 
 ~~~tex
-\mu
+\[ \mu \]
 ~~~
 
 ~~~r
