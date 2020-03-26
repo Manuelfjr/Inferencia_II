@@ -16,7 +16,55 @@ library(OneTwoSamples)
 ~~~
 
 ## Questão 01
-
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>;</mo>
+  <mi>&#x03BC;<!-- μ --></mi>
+  <mo>,</mo>
+  <msup>
+    <mi>&#x03C3;<!-- σ --></mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <mi>&#x03C3;<!-- σ --></mi>
+      <msqrt>
+        <mn>2</mn>
+        <mi>&#x03C0;<!-- π --></mi>
+      </msqrt>
+    </mrow>
+  </mfrac>
+  <msup>
+    <mi>e</mi>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mo>&#x2212;<!-- − --></mo>
+      <mfrac>
+        <mn>1</mn>
+        <mn>2</mn>
+      </mfrac>
+      <msup>
+        <mrow>
+          <mo>(</mo>
+          <mfrac>
+            <mrow>
+              <mi>x</mi>
+              <mo>&#x2212;<!-- − --></mo>
+              <mi>&#x03BC;<!-- μ --></mi>
+            </mrow>
+            <mi>&#x03C3;<!-- σ --></mi>
+          </mfrac>
+          <mo>)</mo>
+        </mrow>
+        <mn>2</mn>
+      </msup>
+    </mrow>
+  </msup>
+</math>
 $\text{S}1(N) = \sum{p=1}^N \text{E}(p)$
 
 ~~~r
