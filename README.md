@@ -2,8 +2,8 @@
 
 Prova 03
 
-Aluno : Manuel Ferreira Junior
-Matricula : 20180008601
+Aluno : Manuel Ferreira Junior //
+Matricula : 20180008601 //
 Disciplina : Inferencia II
 
 ~~~r
@@ -206,8 +206,8 @@ t.test(x4,y4)[3] < alpha
 
 ~~~r
 
-pop5 <- c(4.0,3.5,6.1,5.8,5.4,4.4,4.9,3.9,5.1,5.3,4.
-1,4.2,4.8,4.7,3.8,4.8,5.3,5.5,3.6,3.5,4.7,3.3,
+pop5 <- c(4.0,3.5,6.1,5.8,5.4,4.4,4.9,3.9,5.1,5.3,4.1,
+4.2,4.8,4.7,3.8,4.8,5.3,5.5,3.6,3.5,4.7,3.3,
 3.7,6.3,5.7,3.9,4.6,4.7,4.1,4.3)
 
 pop5 <- as.matrix(pop5)
@@ -271,13 +271,11 @@ prop.test(x = num_positive, num_total, alternative ="greater")[3] < alpha
 # p-value =  0.02806352  //  alpha = 0.05
 # p-value  menor que alpha, entao rejeitamos H0
 
-# Verifica-se que , a um nivel de confianca de 5%, 
-# rejeitamos a hipotese de que a proporcao de 
-# europeus que estao mais otimistas quanto ao
-# panorama economico futuro e menor que a 
-# proporcao de  americanos que responderam
-# afirmativamente, entao, podemos afirmar que  
-# os europeus estao mais otimistas quanto ao panorama
+# Verifica-se que , a um nivel de confianca de 5%, rejeitamos a 
+# hipotese de que a proporcao de europeus que estao mais otimistas
+# quanto ao panorama economico futuro e menor que a proporcao de 
+# americanos que responderam afirmativamente, entao, podemos 
+# afirmar que  os europeus estao mais otimistas quanto ao panorama
 # economico futuro
 ~~~
 
