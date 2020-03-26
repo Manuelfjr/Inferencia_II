@@ -13,9 +13,7 @@ library(OneTwoSamples)
 
 ## Questão 01
 
-$$
-	\sqrt(1)
-$$
+$\text{S}1(N) = \sum{p=1}^N \text{E}(p)$
 
 ~~~r
 
