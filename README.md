@@ -14,7 +14,7 @@ library(OneTwoSamples)
 ## Questão 01
 
 
-~~~tex
+~~~latex
 \[ \mu \]
 ~~~
 
