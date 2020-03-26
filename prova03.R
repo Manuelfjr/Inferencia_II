@@ -31,12 +31,13 @@ xbarra <- mean(x1)
 zc <- (xbarra - mu)/(sigma/sqrt(n)) # Perceba que zc > 0
 zt <- qnorm(1-alpha)
 
-c('z tabelado (zt)' = zt, 'z calculado (zc)' = zc)
+c('z tabelado (zt)' = zt, 'z calculado (zc)' = zc) ## zt = 1.64 // zc = 1.93
 
 zt < zc
 
 # Pela Funcao, temos
-t.test(x1, mu=mu, alternative = "greater")[3] > alpha
+t.test(x1, mu=mu, alternative = "greater")[3] > alpha 
+# alpha = 0.05 // p-valor = 0.09
 # p-value maior que alpha, entao nao rejeitamos H0
 
 # Logo, não rejeitamos a hipotese de que a media populacional é inferior a 42 .
@@ -61,12 +62,13 @@ alpha <- 0.1
 qc <-((n2 - 1)*var(x2))/sigma2 
 qt <- qchisq(alpha,n2-1)
 
-c('q tabelado (qt)' = qt, 'q calculado (qc)' = qc)
+c('q tabelado (qt)' = qt, 'q calculado (qc)' = qc) # qt = 0.0158 // qc = 0.00000018
 
 qt > qc # Regiao inferior da curva
 
 # Pela funcao, temos :
 sigma.test(x2,sigmasq=sigma2,conf.level = 0.90)[3] < alpha
+# p-value = 0.000677 // alpha = 0.1
 # p-value menor que alpha, entao rejeitamos H0 
 
 # Verifica-se que , rejeitamos a hipotese de que a variancia populacional
@@ -82,7 +84,7 @@ pop32 <- c(1.35, 1.69, 2.49, 5.99, 1.29, 3.69, 1.33, 1.49, 1.49, 1.59)
 pop31 <- as.matrix(pop31)
 pop32 <- as.matrix(pop32)
 
-n3 <- c(8) # estou usando o seguinte digito da matricula 2018000 8 601
+n3 <- 8 # estou usando o seguinte digito da matricula 2018000 8 601
 
 set.seed(180008601)
 
@@ -100,12 +102,13 @@ sp <- sqrt( ((n3 - 1)*var(x3) + (n3 - 1)*var(y3))/(n3 + n3 - 2) )
 tc <- (xbarra31 - ybarra32)/(sp*sqrt((1/n3) + (1/n3))) # tc < 0
 tt <- qt(alpha,df = n3 + n3 - 2)
 
-c('t tabelado (tt)' = tt, 't calculado (tc)' = tc)
+c('t tabelado (tt)' = tt, 't calculado (tc)' = tc) # tt = -2.6245 // tc = -0.0711
 
 tt < tc
 
 # Pela funcao, temos :
-t.test(x,y, alternative = "greater")[3] > alpha 
+t.test(x3,y3, alternative = "greater", conf.level = 0.99)[3] > alpha 
+# p-value = 0.5520911 // alpha = 0.01
 # p-value maior que alpha, entao nao rejeitamos H0
 
 # Não rejeitamos a hipotese de que a media dos precos é mais alta
@@ -127,19 +130,23 @@ alpha <- 0.1
 set.seed(180008601)
 
 x4 <- sample(pop41,n4)
+xbarra4 <- mean(x4)
 s41 <- sd(x4)
 
 y4 <- sample(pop42,n4)
+ybarra4 <- mean(y4)
 s42 <- sd(y4)
 
 tt <- c(qf(alpha/2,n4-1,n4-1), qf(1 - (alpha/2), n4-1,n4-1))
 tc <- (s42/s41)**(2)
 
-c('t tabelado (tt)' = tt, 't calculado (tc)' = tc)
+c('t tabelado (tt)' = tt, 't calculado (tc)' = tc) 
+# tt = [0.1077978 ,  9.2766282] // tc = 0.2897078
 
 # Utilizando a funcao 
 
 var.test(x4,y4,conf.level = 0.9)[3] > alpha
+# p-value = 0.3360 // alpha = 0.1
 # p-value maior que alpha, entao nao rejeitamos H0
 
 # Verifica-se que , a um nivel de significancia de 1%, temos que 
@@ -152,16 +159,18 @@ alpha <- 0.1
 
 sp <- sqrt(((n4 - 1)*(s41)**(2) + (n4 - 1)*(s42)**(2))/(n4 + n4 - 2))
 
-tc <- (xbarra41 - ybarra42)/(sp*sqrt((1/n4) + (1/n4))) # Note que tc < 0
+tc <- (xbarra4 - ybarra4)/(sp*sqrt((1/n4) + (1/n4))) # Note que tc < 0
 tt <- c(qt((alpha/2), df= n1 + n2 - 2),qt(1 -(alpha/2), df= n1 + n2 - 2))
 
 c('t tabelado (tt)' = tt, 't calculado (tc)' = tc)
+# tt = [-1.7530504  , 1.7530504] // tc = -9.296591
 
 tt[1] < tc &  tc < tt[2]
 
 # utilizanto a função t.test
 
 t.test(x4,y4,conf.level = 0.9)[3] < alpha
+# p-value = 0.0003727682 // alpha = 0.1
 # p-value menor que alpha, entao rejeitamos H0
 
 # Verificamos que , a um nivel de confiança  de 1%, rejeitamos a de que a diferença
@@ -189,9 +198,11 @@ tc <- (xbarra5 - mu)/(sd(x5)*sqrt(n5)) # Note que tc < 0
 tt <- qnorm(alpha)
 
 c('t tabelado (tt)' = tt, 't calculado (tc)' = tc)
+# tt = -1.64485363  //  tc = -0.06621417 
 
 # Pela funcao temos
 t.test(x5, mu= 5, alternative ='less')[3] > alpha
+# p-value = 0.1687318 // alpha = 0.05
 # sendo o p-valor superior ao meu alpha,  nao rejeitamos H0
 
 # Verifica-se que , a um nivel de confianca de 95 %,  nao ha motivos para rejeitar
@@ -216,6 +227,7 @@ zc <- (p1 - p2)/sqrt((p1*(1-p1)/n1) + (p2*(1-p2)/n2)) # zc > 0
 zt <- qnorm(1 - alpha)
 
 c('z tabelado (zt)' = zt, 'z calculado (zc)' = zc)
+#  zt = 1.644854    // zc =  1.985666 
 
 zt < zc
 
@@ -224,6 +236,7 @@ zt < zc
 num_positive = c(x1, x2)
 num_total = c(n1, n2)
 prop.test(x = num_positive, num_total, alternative ="greater")[3] < alpha
+# p-value =  0.02806352  //  alpha = 0.05
 # p-value  menor que alpha, entao rejeitamos H0
 
 # Verifica-se que , a um nivel de confianca de 5%, rejeitamos a hipotese de que 
