@@ -1,6 +1,15 @@
 # Inferencia II
 
-Disciplina de inferencia II
+Prova 03
+
+Aluno : Manuel Ferreira Junior
+Matricula : 20180008601
+Disciplina : Inferencia II
+
+~~~r
+library(TeachingDemos) 
+library(OneTwoSamples)
+~~~
 
 ## Questão 01
 ~~~r
@@ -40,4 +49,40 @@ t.test(x1, mu=mu, alternative = "greater")[3] > alpha
 
 # Logo, não rejeitamos a hipotese de que a media populacional é inferior a 42 .
 
+~~~
+
+## Questão 02
+
+~~~r
+
+pop2 <- c(1200, 1100, 900, 1250, 1300, 1290,  1100, 1060, 1180, 1120, 1160,
+          1140, 1190, 1110, 1100, 1220)
+
+pop2 <- as.matrix(pop2)
+sd(pop2)
+n2 <- c(2*(0 + 1))
+
+set.seed(180008601)
+
+x2 <- sample(pop2, n2)
+
+sigma2 <- (1e5)**(2)
+alpha <- 0.1
+
+qc <-((n2 - 1)*var(x2))/sigma2 
+qt <- qchisq(alpha,n2-1)
+
+c('q tabelado (qt)' = qt, 'q calculado (qc)' = qc) # qt = 0.0158 // qc = 0.00000018
+
+qt > qc # Regiao inferior da curva
+
+# Pela funcao, temos :
+sigma.test(x2,sigmasq=sigma2,conf.level = 0.90)[3] < alpha
+# p-value = 0.000677 // alpha = 0.1
+# p-value menor que alpha, entao rejeitamos H0 
+
+# Verifica-se que , rejeitamos a hipotese de que a variancia populacional
+# é superior a (100.000 horas)^2, ou seja, rejeitamos a hipotese de que 
+# o desvio padrão do tempo de vida das lampadas é superior ou igual a 100.000
+# horas, a um nivel de confianca de 90 % .
 ~~~
