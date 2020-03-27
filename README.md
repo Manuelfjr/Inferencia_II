@@ -1,29 +1,31 @@
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+---
+title:  "Inferencia II"
+date: Março 26, 2020
+output: 
+  html_document: default
+  pdf_document: default
+---
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+# Prova 03
 
-# Inferencia II
+* **Aluno :** Manuel Ferreira Junior 
+* **Matricula :** 20180008601 
+* **Disciplina :** Inferencia II
 
-Prova 03
-
-Aluno : Manuel Ferreira Junior //
-Matricula : 20180008601 //
-Disciplina : Inferencia II
-
-~~~r
+```{r}
 library(TeachingDemos) 
 library(OneTwoSamples)
-~~~
+```
 
 ## Questão 01
 
+$$
+  H_{0} : \mu \le 42 \\
+  H_{1} : \mu > 42 
+$$
 
-\begin{equation}
-	\text{S} = \sum{p=1}^N \text{E}(p) 
-\end{equation}
 
-
-~~~r
+```{r}
 
 pop1 <- c(40.1, 45.0, 39.1, 43.9, 45.8, 44.2, 37.4, 44.7,
 45.2,41.2, 40.7, 43.1, 44.1, 42.6, 40.6, 41.8, 42.9, 45.8,
@@ -63,11 +65,16 @@ t.test(x1, mu=mu, alternative = "greater")[3] > alpha
 # Logo, não rejeitamos a hipotese de que a media 
 # populacional é inferior a 42 .
 
-~~~
+```
 
 ## Questão 02
 
-~~~r
+$$
+  H_{0} : \sigma^{2} \ge 100.000 \\
+  H_{1} : \sigma^{2} < 100.000
+$$
+
+```{r}
 
 pop2 <- c(1200, 1100, 900, 1250, 1300, 1290,  1100, 
 1060, 1180, 1120, 1160,1140, 1190, 1110, 1100, 1220)
@@ -101,9 +108,15 @@ sigma.test(x2,sigmasq=sigma2,conf.level = 0.90)[3] < alpha
 # ou seja, rejeitamos a hipotese de que o desvio padrão 
 # do tempo de vida das lampadas é superior ou igual a 
 # 100.000 horas, a um nivel de confianca de 90 % .
-~~~
+```
 ## Questão 03
-~~~r
+
+$$
+  H_{0} : \mu_{x} - \mu_{y} \ge 0 \\
+  H_{1} : \mu_{x} - \mu_{y} < 0
+$$
+
+```{r}
 
 pop31 <- c(2.19, 2.39, 2, 7.99, 1.98, 4.99, 1.79, 1.69, 2.19, 1.99)
 pop32 <- c(1.35, 1.69, 2.49, 5.99, 1.29, 3.69, 1.33, 1.49, 1.49, 1.59)
@@ -143,11 +156,25 @@ t.test(x3,y3, alternative = "greater", conf.level = 0.99)[3] > alpha
 # Não rejeitamos a hipotese de que a media dos precos é mais alta
 # no Whole Foods, a um nivel de confiança de 99%
 
-~~~
+```
 
 ## Questão 04
 
-~~~r
+### A)
+
+$$
+  H_{0} : \dfrac{\sigma_{x}^{2}}{\sigma_{y}^{2}}  = 1\\
+  H_{1} : \dfrac{\sigma_{x}^{2}}{\sigma_{y}^{2}} \ne 1
+$$
+
+### B)
+
+$$
+  H_{0} : \mu_{x} - \mu_{y} = 0 \\
+  H_{1} : \mu_{x} - \mu_{y} \ne 0
+$$
+
+```{r}
 
 # A)
 
@@ -210,11 +237,16 @@ t.test(x4,y4)[3] < alpha
 # rejeitamos a de que a diferença entre as medias dos
 # tipos de investimento e igual de 0 .
 
-~~~
+```
 
 ## Questão 05
 
-~~~r
+$$
+  H_{0} : \mu \ge 5 \\
+  H_{1} : \mu < 5
+$$
+
+```{r}
 
 pop5 <- c(4.0,3.5,6.1,5.8,5.4,4.4,4.9,3.9,5.1,5.3,4.1,
 4.2,4.8,4.7,3.8,4.8,5.3,5.5,3.6,3.5,4.7,3.3,
@@ -246,12 +278,17 @@ t.test(x5, mu= 5, alternative ='less')[3] > alpha
 # Verifica-se que , a um nivel de confianca de 95 %,  nao 
 # ha motivos para rejeitar a hipotese de que a proporcao
 # de pacientes para os quais o tempo de recao apos a 
-# utilizacao desse medicamento maior que 5 minutos .
-~~~
+# utilizacao desse medicamento e maior que 5 minutos .
+```
 
 ## Questão 06
 
-~~~r
+$$
+  H_{0} : p_{1} - p_{2} \le 0 \\
+  H_{1} : p_{1} - p_{2} > 0
+$$
+
+```{r}
 
 set.seed(180008601)
 
@@ -287,5 +324,6 @@ prop.test(x = num_positive, num_total, alternative ="greater")[3] < alpha
 # americanos que responderam afirmativamente, entao, podemos 
 # afirmar que  os europeus estao mais otimistas quanto ao panorama
 # economico futuro
-~~~
+```
+
 
