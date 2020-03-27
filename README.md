@@ -13,8 +13,10 @@ output:
 * **Disciplina :** Inferencia II
 
 ~~~r
+
 library(TeachingDemos) 
 library(OneTwoSamples)
+
 ~~~
 
 ## Questão 01
